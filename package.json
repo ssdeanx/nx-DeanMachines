@@ -2,11 +2,23 @@
   "name": "@nx-dean-machines/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx test",
+    "lint": "nx lint",
+    "prepare": "husky install || echo 'Skipping husky installation'",
+    "setup": "node tools/setup-workspace.js",
+    "generate:app": "nx g @nx/react:application --directory=apps --routing=true --style=css --linter=eslint --bundler=vite",
+    "generate:lib": "nx g @nx/react:library --directory=libs --buildable",
+    "generate:ui-lib": "nx g @nx/react:library --directory=libs/ui --buildable",
+    "generate:feature-lib": "nx g @nx/react:library --directory=libs/feature --buildable",
+    "generate:util-lib": "nx g @nx/js:library --directory=libs/util --buildable"
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@nx/js": "20.6.2",
+    "@nx/react": "^20.6.2",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
@@ -17,5 +29,13 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@nx/vite": "^20.6.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  }
 }

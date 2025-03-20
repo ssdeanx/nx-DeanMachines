@@ -1,0 +1,74 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Current Project Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/@nx/cli/bin/nx.js",
+      "args": ["test", "${input:nxProject}", "--testFile=${relativeFile}", "--watch"],
+      "console": "integratedTerminal",
+      "outputCapture": "std",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Debug Current Application",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/apps/*/src/*",
+        "webpack:///src/*": "${webRoot}/apps/*/src/*",
+        "webpack:///*": "${webRoot}/*"
+      }
+    },
+    {
+      "name": "Debug E2E Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/@nx/cli/bin/nx.js",
+      "args": ["e2e", "${input:e2eProject}", "--watch"],
+      "console": "integratedTerminal",
+      "outputCapture": "std",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Debug Node Application",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/@nx/cli/bin/nx.js",
+      "args": ["serve", "${input:nxProject}"],
+      "console": "integratedTerminal",
+      "outputCapture": "std",
+      "internalConsoleOptions": "neverOpen",
+      "sourceMaps": true
+    },
+    {
+      "name": "Debug Jest Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+      "args": [
+        "--runInBand",
+        "--config=${workspaceFolder}/jest.config.ts",
+        "${relativeFileDirname}/${fileBasenameNoExtension}"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "nxProject",
+      "type": "command",
+      "command": "nx.projects"
+    },
+    {
+      "id": "e2eProject",
+      "type": "command",
+      "command": "nx.e2eProjects"
+    }
+  ]
+}

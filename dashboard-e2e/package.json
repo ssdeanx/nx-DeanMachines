@@ -1,0 +1,10 @@
+{
+  "name": "@nx-dean-machines/dashboard-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@nx-dean-machines/dashboard"
+    ]
+  }
+}

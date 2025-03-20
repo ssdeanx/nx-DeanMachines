@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "nx:affected",
+      "detail": "Run tasks for affected projects",
+      "type": "shell",
+      "command": "npx nx affected --target=${input:target}",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      }
+    },
+    {
+      "label": "nx:graph",
+      "detail": "Visualize project graph",
+      "type": "shell",
+      "command": "npx nx graph",
+      "problemMatcher": []
+    },
+    {
+      "label": "nx:run",
+      "detail": "Run a specific target for a project",
+      "type": "shell",
+      "command": "npx nx run ${input:project}:${input:target}",
+      "problemMatcher": []
+    },
+    {
+      "label": "nx:reset",
+      "detail": "Reset Nx cache",
+      "type": "shell",
+      "command": "npx nx reset",
+      "problemMatcher": []
+    },
+    {
+      "label": "nx:format",
+      "detail": "Format code with Prettier",
+      "type": "shell",
+      "command": "npx nx format:write --all",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "project",
+      "type": "command",
+      "command": "nx.projects"
+    },
+    {
+      "id": "target",
+      "type": "pickString",
+      "options": ["build", "test", "lint", "serve", "e2e", "format"],
+      "default": "build",
+      "description": "The target to run"
+    }
+  ]
+}

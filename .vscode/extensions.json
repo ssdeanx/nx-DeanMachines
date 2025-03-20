@@ -1,3 +1,22 @@
 {
-  "recommendations": ["nrwl.angular-console", "esbenp.prettier-vscode"]
+  "recommendations": [
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "firsttris.vscode-jest-runner",
+    "ms-playwright.playwright",
+    "christian-kohler.path-intellisense",
+    "streetsidesoftware.code-spell-checker",
+    "mikestead.dotenv",
+    "editorconfig.editorconfig",
+    "formulahendry.auto-rename-tag",
+    "aaron-bond.better-comments",
+    "usernamehw.errorlens",
+    "pkief.material-icon-theme",
+    "wix.vscode-import-cost",
+    "mhutchie.git-graph",
+    "eamodio.gitlens",
+    "yzhang.markdown-all-in-one",
+    "gruntfuggly.todo-tree"
+  ]
 }
