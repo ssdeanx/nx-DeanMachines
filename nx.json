@@ -1,8 +1,32 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json", "{workspaceRoot}/.eslintignore"]
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["default", "^default"]
+    },
+    "e2e": {
+      "cache": true,
+      "inputs": ["default", "^default"]
+    }
+  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": ["default"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/.eslintrc.json"
+    ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "nxCloudId": "67dc8f9ddb197d085855560f",
@@ -21,5 +45,16 @@
         }
       }
     }
-  ]
+  ],
+  "generators": {
+    "@nx/js:library": {
+      "buildable": true
+    },
+    "@nx/react:library": {
+      "buildable": true,
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    }
+  }
 }

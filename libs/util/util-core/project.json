@@ -1,0 +1,35 @@
+{
+  "name": "util-core",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/util/util-core/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/util/util-core",
+        "main": "libs/util/util-core/src/index.ts",
+        "tsConfig": "libs/util/util-core/tsconfig.lib.json",
+        "assets": ["libs/util/util-core/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/util/util-core/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/util/util-core/jest.config.ts"
+      }
+    }
+  },
+  "tags": ["type:util", "scope:shared"]
+}
