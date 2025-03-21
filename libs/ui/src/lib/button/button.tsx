@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, JSX } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /**
@@ -26,7 +26,7 @@ export function Button({
   isLoading,
   type = 'button',
   ...props
-}: ButtonProps) {
+}: ButtonProps): JSX.Element {
   // Base styles
   const baseStyles =
     'font-medium rounded-md inline-flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500';
