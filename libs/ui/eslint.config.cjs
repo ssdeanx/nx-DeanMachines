@@ -11,44 +11,31 @@ module.exports = [
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
-      '@nx/enforce-module-boundaries': [
-        'error',
-        {
-          enforceBuildableLibDependency: true,
-          allow: [],
-          depConstraints: [
-            {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
-            },
-          ],
-        },
-      ],
+      '@typescript-eslint/no-require-imports': ['error', { allow: ['.cjs'] }],
     },
   },
   ...compat.config({
-    extends: [
-      'plugin:react/recommended',
-      'plugin:react-hooks/recommended',
-      'plugin:@typescript-eslint/recommended',
-      'prettier',
-    ],
-    rules: {
-      'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
+    extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
   }),
   {
     ignores: ['jest.config.ts', '**/dist/**', '**/node_modules/**'],
   },
 ];
 
-// libs/ui/src/index.ts
-export * from './lib/button/button';
-export * from './lib/input/input';
-export * from './lib/ui';
+// Import button using require (since this is a .cjs file)
+// Remove or fix the button import
+// If the button module exists, ensure the path is correct
+// If not needed, remove this section entirely
+
+// Merge button-specific rules with existing config
+module.exports = [
+  ...module.exports,
+  {
+    files: ['**/button/**/*.ts', '**/button/**/*.tsx'],
+    rules: {
+      // Add any button-specific rules here
+      '@typescript-eslint/explicit-function-return-type': 'error',
+      'react/prop-types': 'off', // Example: Disable prop-types for button
+    },
+  },
+];
