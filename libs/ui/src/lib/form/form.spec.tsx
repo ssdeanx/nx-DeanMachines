@@ -4,7 +4,7 @@ import Form from './form';
 
 describe('Form', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Form />);
+    const { baseElement } = render(<Form>Test Content</Form>);
     expect(baseElement).toBeTruthy();
   });
 });

@@ -34,7 +34,7 @@
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .npmrc, .yarnrc, .pnpmrc",
     "*.d.ts": "${capture}.js",
     "tsconfig.*.json": "tsconfig.json",
-    ".eslintrc.json": ".eslintignore, .prettierrc, .prettierignore, .editorconfig",
+    ".eslintrc.json": ".eslintignore, .prettierrc, .prettierignore, .editorconfig"
   },
   "explorer.compactFolders": false,
   "explorer.sortOrder": "type",
@@ -92,7 +92,7 @@
   // Git
   "git.autofetch": true,
   "git.confirmSync": false,
-  
+
   // Workbench
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.colorCustomizations": {
@@ -105,7 +105,7 @@
   "editor.renderWhitespace": "boundary",
   "editor.renderControlCharacters": false,
   "editor.minimap.renderCharacters": false,
-  
+
   // TypeScript performance settings
   "typescript.tsserver.maxTsServerMemory": 8192,
   "typescript.tsserver.experimental.enableProjectDiagnostics": true,
@@ -114,7 +114,7 @@
     "watchDirectory": "useFsEvents",
     "fallbackPolling": "dynamicPriorityPolling"
   },
-  
+
   // Enhanced terminal for Nx commands
   "terminal.integrated.env.linux": {
     "NX_DAEMON": "true"
@@ -127,8 +127,8 @@
   },
 
   // Additional productivity settings
-  "editor.quickSuggestions": { 
-    "strings": true 
+  "editor.quickSuggestions": {
+    "strings": true
   },
   "todohighlight.keywords": [
     {
@@ -144,5 +144,14 @@
   ],
   "editor.unicodeHighlight.allowedLocales": {
     "en": true
-  }
+  },
+  "cSpell.words": [
+    "collab",
+    "Ekman's",
+    "libpeerconnection",
+    "Metacognitive",
+    "testem",
+    "vite",
+    "vitest"
+  ]
 }

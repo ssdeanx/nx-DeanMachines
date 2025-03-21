@@ -24,11 +24,13 @@
 ## Next Steps
 
 1. **Library Implementation**
-   - Generate core UI library in `libs/ui`
+
+   - Generate core UI library in `libs/ui` # card, button, form, card so far
    - Create utility library in `libs/util` for shared helper functions
    - Implement data models in `libs/model`
 
 2. **Application Development**
+
    - Enhance dashboard with proper routing
    - Implement core UI components
    - Connect with shared libraries
@@ -40,14 +42,14 @@
 
 ## Architecture Status
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| Workspace Structure | ✅ Complete | Base structure established |
-| React Application | 🔄 In Progress | Dashboard app created, needs refinement |
-| UI Component Library | 📅 Planned | Next priority for implementation |
-| Feature Libraries | 📅 Planned | To follow UI library implementation |
-| Data Libraries | 📅 Planned | Will implement after core UI work |
-| CI/CD Pipeline | 🔄 In Progress | Basic structure defined |
+| Component            | Status         | Notes                                   |
+| -------------------- | -------------- | --------------------------------------- |
+| Workspace Structure  | ✅ Complete    | Base structure established              |
+| React Application    | 🔄 In Progress | Dashboard app created, needs refinement |
+| UI Component Library | 📅 Planned     | Next priority for implementation        |
+| Feature Libraries    | 📅 Planned     | To follow UI library implementation     |
+| Data Libraries       | 📅 Planned     | Will implement after core UI work       |
+| CI/CD Pipeline       | 🔄 In Progress | Basic structure defined                 |
 
 ## Known Issues
 
