@@ -1,15 +1,24 @@
+import { Button, Card, Form, Input } from '@nx-dean-machines/ui';
+import { ReactElement } from 'react';
 import NxWelcome from './nx-welcome';
 
-import { Route, Routes, Link } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
-export function App() {
+export function App(): ReactElement {
   return (
-    <div>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+      <Card title="Login Form" subtitle="Enter your credentials">
+        <Form>
+          <Input label="Username" placeholder="Enter your username" />
+          <Input label="Password" type="password" placeholder="Enter your password" />
+          <Button>Login</Button>
+        </Form>
+      </Card>
       <NxWelcome title="@nx-dean-machines/dashboard" />
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
       <br />
       <hr />
       <br />

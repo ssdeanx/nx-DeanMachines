@@ -1,4 +1,4 @@
-const { join } = require('path');
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 // Note: If you use library-specific PostCSS/Tailwind configuration then you should remove the `postcssConfig` build
 // option from your application's configuration (i.e. project.json).
@@ -7,9 +7,7 @@ const { join } = require('path');
 
 module.exports = {
   plugins: {
-    tailwindcss: {
-      config: join(__dirname, 'tailwind.config.js'),
-    },
-    autoprefixer: {},
+    tailwindcss: require('tailwindcss'),
+    autoprefixer: require('autoprefixer'),
   },
 };

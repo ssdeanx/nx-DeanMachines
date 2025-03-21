@@ -77,6 +77,7 @@ npx nx release            # Actual release
 ## Code Quality
 
 This project enforces strict code quality standards through:
+
 - ESLint for code linting
 - Prettier for code formatting
 - Module boundary enforcement
@@ -85,6 +86,7 @@ This project enforces strict code quality standards through:
 ## CI/CD
 
 Continuous Integration is set up through GitHub Actions, running:
+
 - Linting
 - Testing
 - Building
